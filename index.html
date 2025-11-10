@@ -116,3 +116,24 @@
 </body>
 </html>
 <img src="assets/images/logo.png" alt="Site Logo" />
+<script>
+  const mobileBtn = document.getElementById('mobileBtn');
+  const nav = document.createElement('nav');
+
+  nav.className =
+    'flex flex-col gap-4 items-center bg-white text-gray-800 shadow-md absolute top-full left-0 w-full py-6 font-medium md:hidden';
+  nav.innerHTML = `
+    <a href="#about" class="hover:text-red-700">About</a>
+    <a href="#how" class="hover:text-red-700">How It Works</a>
+    <a href="#register" class="hover:text-red-700">Register</a>
+    <a href="#contact" class="hover:text-red-700">Contact</a>
+    <a href="#" class="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700 transition">Donate Now</a>
+  `;
+
+  document.querySelector('header > div').appendChild(nav);
+  nav.style.display = 'none';
+
+  mobileBtn.addEventListener('click', () => {
+    nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+  });
+</script>
